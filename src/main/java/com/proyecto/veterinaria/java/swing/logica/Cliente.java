@@ -1,7 +1,16 @@
 package com.proyecto.veterinaria.java.swing.logica;
 
-public class Cliente {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+
+
+@Entity
+public class Cliente {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id_cliente;
     private String nombre;
     private String dni;

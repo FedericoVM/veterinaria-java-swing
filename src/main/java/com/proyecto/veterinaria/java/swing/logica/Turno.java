@@ -2,26 +2,38 @@ package com.proyecto.veterinaria.java.swing.logica;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
-
+@Entity
 public class Turno {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id_turno;
     private LocalDate fecha;
     private LocalTime hora;
     private String motivoConsulta;
-    private int id_mascota;
-    private int id_cliente;
+    @ManyToOne
+    @JoinColumn(name = "id_mascota")
+    private Mascota mascota;
+    @ManyToOne
+    @JoinColumn(name = "id_cliente")
+    private Cliente cliente;
 
     public Turno() {
     }
 
-    public Turno(int id_turno, LocalDate fecha, LocalTime hora, String motivoConsulta, int id_mascota, int id_cliente) {
+    public Turno(int id_turno, LocalDate fecha, LocalTime hora, String motivoConsulta, Mascota mascota, Cliente cliente) {
         this.id_turno = id_turno;
         this.fecha = fecha;
         this.hora = hora;
         this.motivoConsulta = motivoConsulta;
-        this.id_mascota = id_mascota;
-        this.id_cliente = id_cliente;
+        this.mascota = mascota;
+        this.cliente = cliente;
     }
 
     public void setId_turno(int id_turno) {
@@ -40,12 +52,12 @@ public class Turno {
         this.motivoConsulta = motivoConsulta;
     }
 
-    public void setId_mascota(int id_mascota) {
-        this.id_mascota = id_mascota;
+    public void setMascota(Mascota mascota) {
+        this.mascota = mascota;
     }
 
-    public void setId_cliente(int id_cliente) {
-        this.id_cliente = id_cliente;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     public int getId_turno() {
@@ -64,12 +76,14 @@ public class Turno {
         return motivoConsulta;
     }
 
-    public int getId_mascota() {
-        return id_mascota;
+    public Mascota getMascota() {
+        return mascota;
     }
 
-    public int getId_cliente() {
-        return id_cliente;
+    public Cliente getCliente() {
+        return cliente;
     }
+    
+    
     
 }
