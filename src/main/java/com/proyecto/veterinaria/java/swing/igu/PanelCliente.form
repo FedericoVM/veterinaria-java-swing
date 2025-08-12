@@ -95,9 +95,10 @@
                       <EmptySpace pref="31" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="btnSalirCliente" max="32767" attributes="0"/>
-                          <Component id="verCliente" max="32767" attributes="0"/>
+                          <Component id="BtnAgregarCliente" max="32767" attributes="0"/>
                           <Component id="btnEditarCliente" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnEliminarCliente1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnEliminarCliente" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnVerCliente" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   </Group>
@@ -107,15 +108,17 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace pref="48" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="verCliente" min="-2" pref="45" max="-2" attributes="0"/>
+                              <Component id="BtnAgregarCliente" min="-2" pref="45" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="btnVerCliente" min="-2" pref="45" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="btnEditarCliente" min="-2" pref="45" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                              <Component id="btnEliminarCliente1" min="-2" pref="45" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
-                              <Component id="btnSalirCliente" min="-2" pref="45" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="btnEliminarCliente" min="-2" pref="45" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="btnSalirCliente" min="-2" pref="34" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jScrollPane1" min="-2" pref="379" max="-2" attributes="0"/>
                       </Group>
@@ -155,19 +158,27 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalirClienteActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="verCliente">
+            <Component class="javax.swing.JButton" name="BtnAgregarCliente">
               <Properties>
-                <Property name="text" type="java.lang.String" value="VER"/>
+                <Property name="text" type="java.lang.String" value="AGREGAR"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnAgregarClienteActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnEditarCliente">
               <Properties>
                 <Property name="text" type="java.lang.String" value="EDITAR"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnEliminarCliente1">
+            <Component class="javax.swing.JButton" name="btnEliminarCliente">
               <Properties>
                 <Property name="text" type="java.lang.String" value="ELIMINAR"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnVerCliente">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="VER"/>
               </Properties>
             </Component>
           </SubComponents>

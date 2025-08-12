@@ -11,5 +11,10 @@ public class ControladoraPersistencia {
     public List<Cliente> traerClientes() {
         return clienteJpa.findClienteEntities();
     }
+
+    public void crearCliente(Cliente cliente) {
+        clienteJpa.create(cliente);
+    }
+
     
 }

@@ -17,5 +17,17 @@ public class Controladora {
     public List<Cliente> traerClientes() {
         return  controladoraPersistencia.traerClientes();
     }
+
+    public void crearCliente(String nombreCliente, String dni, String correo, String telefono, String direccion) {
+        
+        Cliente cliente = new Cliente();
+        cliente.setNombre(nombreCliente);
+        cliente.setDni(dni);
+         cliente.setCorreo(correo);
+        cliente.setTelefono(telefono);
+        cliente.setDireccion(direccion);
+        
+        controladoraPersistencia.crearCliente(cliente);
+    }
     
 }
