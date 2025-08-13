@@ -3,6 +3,8 @@ package com.proyecto.veterinaria.java.swing.igu;
 import com.proyecto.veterinaria.java.swing.logica.Cliente;
 import com.proyecto.veterinaria.java.swing.logica.Controladora;
 import java.util.List;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class PanelCliente extends javax.swing.JFrame {
@@ -71,6 +73,11 @@ public class PanelCliente extends javax.swing.JFrame {
         btnEditarCliente.setText("EDITAR");
 
         btnEliminarCliente.setText("ELIMINAR");
+        btnEliminarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarClienteActionPerformed(evt);
+            }
+        });
 
         btnVerCliente.setText("VER");
 
@@ -165,6 +172,24 @@ public class PanelCliente extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_BtnAgregarClienteActionPerformed
 
+    private void btnEliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarClienteActionPerformed
+
+        if (tablaClientes.getRowCount() > 0) {
+            if (tablaClientes.getSelectedRow() != -1) {
+                int idCliente = Integer.parseInt(String.valueOf(tablaClientes.getValueAt(tablaClientes.getSelectedRow(), 0)));
+                control.eliminarCliente(idCliente);
+                mostrarMensaje("El cliente fue eliminado", "Info", "Eliminacion");
+                cargarTabla();
+            } else {
+                mostrarMensaje("Error! Debes seleccionar un registro", "error", "Error al eliminar");
+            }
+        } else {
+            mostrarMensaje("Error! La tabal esta vacia", "error", "Error al eliminar");
+        }
+
+
+    }//GEN-LAST:event_btnEliminarClienteActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAgregarCliente;
@@ -205,4 +230,19 @@ public class PanelCliente extends javax.swing.JFrame {
         tablaClientes.setModel(modeloTabla);
 
     }
+
+    public void mostrarMensaje(String mensaje, String tipo, String titulo) {
+        JOptionPane optionPane = new JOptionPane(mensaje);
+
+        if (tipo.equals("Info")) {
+            optionPane.setMessageType(JOptionPane.INFORMATION_MESSAGE);
+        } else if (tipo.equals("error")) {
+            optionPane.setMessageType(JOptionPane.ERROR_MESSAGE);
+        }
+
+        JDialog dialog = optionPane.createDialog(titulo);
+        dialog.setAlwaysOnTop(true);
+        dialog.setVisible(true);
+    }
+
 }

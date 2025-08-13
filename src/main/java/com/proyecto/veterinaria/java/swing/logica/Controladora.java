@@ -29,5 +29,9 @@ public class Controladora {
         
         controladoraPersistencia.crearCliente(cliente);
     }
+
+    public void eliminarCliente(int idCliente) {
+       controladoraPersistencia.eliminarCliente(idCliente);
+    }
     
 }

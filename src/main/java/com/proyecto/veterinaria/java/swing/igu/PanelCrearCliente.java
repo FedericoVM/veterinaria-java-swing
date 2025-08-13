@@ -221,7 +221,6 @@ public class PanelCrearCliente extends javax.swing.JFrame {
             optionPane.setMessageType(JOptionPane.ERROR_MESSAGE);
         }
 
-        // Para mostrar la pantalla del mensaje
         JDialog dialog = optionPane.createDialog(titulo);
         dialog.setAlwaysOnTop(true);
         dialog.setVisible(true);
