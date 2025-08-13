@@ -33,5 +33,9 @@ public class Controladora {
     public void eliminarCliente(int idCliente) {
        controladoraPersistencia.eliminarCliente(idCliente);
     }
+
+    public Cliente buscarCliente(int idCliente) {
+        return controladoraPersistencia.buscarCliente(idCliente);
+    }
     
 }

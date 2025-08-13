@@ -27,5 +27,9 @@ public class ControladoraPersistencia {
         }
     }
 
+    public Cliente buscarCliente(int idCliente) {
+       return clienteJpa.findCliente(idCliente);
+    }
+
     
 }

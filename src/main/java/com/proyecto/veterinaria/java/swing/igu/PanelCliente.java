@@ -80,6 +80,11 @@ public class PanelCliente extends javax.swing.JFrame {
         });
 
         btnVerCliente.setText("VER");
+        btnVerCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerClienteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -103,10 +108,10 @@ public class PanelCliente extends javax.swing.JFrame {
                 .addContainerGap(48, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(BtnAgregarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
                         .addComponent(btnVerCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27)
+                        .addComponent(BtnAgregarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
                         .addComponent(btnEditarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
                         .addComponent(btnEliminarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -128,7 +133,7 @@ public class PanelCliente extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(208, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,6 +194,26 @@ public class PanelCliente extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_btnEliminarClienteActionPerformed
+
+    private void btnVerClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerClienteActionPerformed
+        if (tablaClientes.getRowCount() > 0) {
+
+            if (tablaClientes.getSelectedRow() != -1) {
+
+                int idCliente = Integer.valueOf(String.valueOf(tablaClientes.getValueAt(tablaClientes.getSelectedRow(), 0)));
+                Cliente cliente = control.buscarCliente(idCliente);
+                PanelDetalleCliente panelDetalleCliente = new PanelDetalleCliente(cliente);
+                panelDetalleCliente.setVisible(true);
+                panelDetalleCliente.setLocationRelativeTo(null);
+                
+            } else {
+                mostrarMensaje("Debe seleccionar un registro", "error", "Error!");
+            }
+
+        } else {
+            mostrarMensaje("La tabla esta vacia", "error", "Error! Tabla vacia");
+        }
+    }//GEN-LAST:event_btnVerClienteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

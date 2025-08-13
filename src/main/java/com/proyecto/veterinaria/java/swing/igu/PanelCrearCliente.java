@@ -93,19 +93,19 @@ public class PanelCrearCliente extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addGap(80, 80, 80)
-                                .addComponent(txtTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE))
+                                .addComponent(txtTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addGap(90, 90, 90)
-                                .addComponent(txtCorreo, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE))
+                                .addComponent(txtCorreo))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addGap(76, 76, 76)
-                                .addComponent(txtDireccion, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE))
+                                .addComponent(txtDireccion))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addGap(108, 108, 108)
-                                .addComponent(txtDni, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE))
+                                .addComponent(txtDni))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addGap(18, 18, 18)
@@ -157,7 +157,7 @@ public class PanelCrearCliente extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
