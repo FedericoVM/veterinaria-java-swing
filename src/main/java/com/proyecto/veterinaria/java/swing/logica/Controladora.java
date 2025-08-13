@@ -12,7 +12,6 @@ public class Controladora {
         this.controladoraPersistencia = new ControladoraPersistencia();
     }
     
-    
 
     public List<Cliente> traerClientes() {
         return  controladoraPersistencia.traerClientes();
@@ -36,6 +35,18 @@ public class Controladora {
 
     public Cliente buscarCliente(int idCliente) {
         return controladoraPersistencia.buscarCliente(idCliente);
+    }
+
+    public void editarCliente(Cliente cliente, String nombre, String dni, String correo, String telefono, String direccion) {
+       cliente.setNombre(nombre);
+       cliente.setDni(dni);
+       cliente.setCorreo(correo);
+       cliente.setTelefono(telefono);
+       cliente.setDireccion(direccion);
+       
+       
+       controladoraPersistencia.editarCliente(cliente);
+       
     }
     
 }

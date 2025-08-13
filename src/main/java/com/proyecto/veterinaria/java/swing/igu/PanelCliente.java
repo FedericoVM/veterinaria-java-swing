@@ -71,6 +71,11 @@ public class PanelCliente extends javax.swing.JFrame {
         });
 
         btnEditarCliente.setText("EDITAR");
+        btnEditarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarClienteActionPerformed(evt);
+            }
+        });
 
         btnEliminarCliente.setText("ELIMINAR");
         btnEliminarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -133,7 +138,7 @@ public class PanelCliente extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(208, Short.MAX_VALUE))
+                .addContainerGap(202, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,7 +210,7 @@ public class PanelCliente extends javax.swing.JFrame {
                 PanelDetalleCliente panelDetalleCliente = new PanelDetalleCliente(cliente);
                 panelDetalleCliente.setVisible(true);
                 panelDetalleCliente.setLocationRelativeTo(null);
-                
+
             } else {
                 mostrarMensaje("Debe seleccionar un registro", "error", "Error!");
             }
@@ -214,6 +219,27 @@ public class PanelCliente extends javax.swing.JFrame {
             mostrarMensaje("La tabla esta vacia", "error", "Error! Tabla vacia");
         }
     }//GEN-LAST:event_btnVerClienteActionPerformed
+
+    private void btnEditarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarClienteActionPerformed
+        if (tablaClientes.getRowCount() > 0) {
+
+            if (tablaClientes.getSelectedRow() != -1) {
+
+                int idCliente = Integer.valueOf(String.valueOf(tablaClientes.getValueAt(tablaClientes.getSelectedRow(), 0)));
+                Cliente clienteEncontrado = control.buscarCliente(idCliente);
+                PanelEditarCliente panelEditarCliente = new PanelEditarCliente(control, clienteEncontrado);
+                panelEditarCliente.setVisible(true);
+                panelEditarCliente.setLocationRelativeTo(null);
+                this.dispose();
+
+            } else {
+                mostrarMensaje("Error! Debe selecionar un registro", "error", "Error al editar");
+            }
+
+        } else {
+            mostrarMensaje("Error! La tabla esta vacia", "error", "Error! Tabla vacia");
+        }
+    }//GEN-LAST:event_btnEditarClienteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
