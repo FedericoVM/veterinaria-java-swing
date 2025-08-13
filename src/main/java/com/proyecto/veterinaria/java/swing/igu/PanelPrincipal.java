@@ -2,7 +2,6 @@ package com.proyecto.veterinaria.java.swing.igu;
 
 import com.proyecto.veterinaria.java.swing.logica.Controladora;
 
-
 public class PanelPrincipal extends javax.swing.JFrame {
     
     Controladora control = null;
@@ -11,14 +10,14 @@ public class PanelPrincipal extends javax.swing.JFrame {
         initComponents();
         control = new Controladora();
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnGestionMascotas = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         btnSalirAplicacion = new javax.swing.JButton();
         btnClientes = new javax.swing.JButton();
@@ -33,8 +32,13 @@ public class PanelPrincipal extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 29)); // NOI18N
         jLabel1.setText("VETERINARIA");
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setText("MASCOTAS");
+        btnGestionMascotas.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnGestionMascotas.setText("MASCOTAS");
+        btnGestionMascotas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGestionMascotasActionPerformed(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton2.setText("TURNOS");
@@ -66,7 +70,7 @@ public class PanelPrincipal extends javax.swing.JFrame {
                     .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(108, 108, 108)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGestionMascotas, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSalirAplicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(220, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -82,7 +86,7 @@ public class PanelPrincipal extends javax.swing.JFrame {
                 .addGap(52, 52, 52)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnGestionMascotas, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -105,7 +109,7 @@ public class PanelPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-       
+        
     }//GEN-LAST:event_formWindowOpened
 
     private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
@@ -119,17 +123,20 @@ public class PanelPrincipal extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnSalirAplicacionActionPerformed
 
+    private void btnGestionMascotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGestionMascotasActionPerformed
+        PanelMascotas panelMascotas = new PanelMascotas();
+        panelMascotas.setVisible(true);
+        panelMascotas.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnGestionMascotasActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClientes;
+    private javax.swing.JButton btnGestionMascotas;
     private javax.swing.JButton btnSalirAplicacion;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 
-    
-    
 }
